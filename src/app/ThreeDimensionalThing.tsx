@@ -27,7 +27,7 @@ export function ThreeDimensionalThing() {
   );
 }
 
-function Band() {
+export function Band() {
   const band = useRef(), fixed = useRef(), j1 = useRef(), j2 = useRef(), j3 = useRef(), card = useRef() // prettier-ignore
   const vec = new THREE.Vector3(), ang = new THREE.Vector3(), rot = new THREE.Vector3(), dir = new THREE.Vector3() // prettier-ignore
   const { width, height } = useThree((state) => state.size);
@@ -75,7 +75,7 @@ function Band() {
 
   return (
     <>
-      <group position={[0, 4, 0]}>
+      <group position={[5, 4.3, 0]}>
         <RigidBody
           ref={fixed}
           angularDamping={2}
@@ -137,7 +137,7 @@ function Band() {
           </mesh>
         </RigidBody>
       </group>
-      <mesh ref={band}>
+      <mesh ref={band} position={[0, 0, 0]}>
         <meshLineGeometry />
         <meshLineMaterial
           transparent
